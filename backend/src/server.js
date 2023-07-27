@@ -9,4 +9,4 @@ app.use("/produtos", produtosRouter) //define a rota produtos
 
 app.use("/users", login) //define a rota users
 
-app.listen(3000,()=>console.log("Servidor rodando na porta 3000")) //inicia e define a porta do servidor
+app.listen(3001,()=>console.log("Servidor rodando na porta 3001")) //inicia e define a porta do servidor
