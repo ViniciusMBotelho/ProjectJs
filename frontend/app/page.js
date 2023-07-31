@@ -12,7 +12,7 @@ export default function Home() {
   useEffect(() => {
     // controlar o que acontece ao carregar a pagina
     const getProduto = async () =>
-      //aerofunction assincrona que força o site a esperar seu conteudo ser carregado
+      //arrowfunction assincrona que força o site a esperar seu conteudo ser carregado
       await axios // conteudo a ser carregado
         .get("http://localhost:3001/produtos/listar")
         .then((response) => setProdutos(response.data)) //depois de carregado mostrar apenas o conteudo data
