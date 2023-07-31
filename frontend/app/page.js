@@ -2,6 +2,7 @@
 import styles from "./page.module.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Image from "next/image";
 
 export default function Home() {
   //pagina inicial do site
@@ -24,19 +25,26 @@ export default function Home() {
     setNumero(numero + 1); //incrementa o valor atual em 1 ***************
   };
 
+  const deleteProduto = async (id) => {
+    //aerofunction que chama o metodo delete e recebe o id como parametro na url
+    await axios
+      .delete(`http://localhost:3001/produtos/delete/${id}`)
+      .then((response) => alert(`Produto de id ${id} deletado!`))
+      .catch((error) => console.log(error));
+  };
+
   const DivProduto = () =>
     //criação da div onde o produto ira aparecer no corpo do site
-    produtos.map(
-      (
-        produto //loop para aparecer todo o array ||||| div id={produto.id} oara que cada div tenha uma nomenclatura unica
-      ) => (
-        <div id={produto.id}>
-          <h4>{produto.nome}</h4>
-          <h5>{produto.preco}</h5>
-          <h6>{produto.categoria}</h6>
-        </div>
-      )
-    );
+    //loop para aparecer todo o array ||||| div id={produto.id} oara que cada div tenha uma nomenclatura unica
+    produtos.map((produto) => (
+      <div id={produto.id}>
+        <img src={produto.imagem} width={500} height={300} />
+        <h4>{produto.nome}</h4>
+        <h5>{produto.preco}</h5>
+        <h6>{produto.categoria}</h6>
+        <button onClick={() => deleteProduto(produto.id)}>Deletar</button>
+      </div>
+    )); //componente de produto
 
   return (
     //corpo do site

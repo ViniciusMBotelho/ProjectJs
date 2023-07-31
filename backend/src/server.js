@@ -1,16 +1,19 @@
-import express from "express" //biblioteca para criação de servidor
-import { login } from "./routes/users/login.js" //rota relacionada ao login
-import { produtosRouter } from "./routes/produtos/produtosRouter.js" //importando rotas relacionados aos produtos
-import cors from "cors"
+import express from "express"; //biblioteca para criação de servidor
+import { login } from "./routes/users/login.js"; //rota relacionada ao login
+import { produtosRouter } from "./routes/produtos/produtosRouter.js"; //importando rotas relacionados aos produtos
+import cors from "cors";
+import { PrismaClient } from "@prisma/client"; //importando funções do prisma
 
-export const app = express() //define e exporta o objeto principal do servidor para os seus relacionados
-app.use(express.json()) //permite utilizar json nas requisições
+export const app = express(); //define e exporta o objeto principal do servidor para os seus relacionados
+app.use(express.json()); //permite utilizar json nas requisições
 
-const corsOptions = {origin: '*'}
-app.use(cors(corsOptions))
+export const prisma = new PrismaClient(); //iniciando conexao com banco de dados
 
-app.use("/produtos", produtosRouter) //define a rota produtos
+const corsOptions = { origin: "*" };
+app.use(cors(corsOptions));
 
-app.use("/users", login) //define a rota users
+app.use("/produtos", produtosRouter); //define a rota produtos
 
-app.listen(3001,()=>console.log("Servidor rodando na porta 3001")) //inicia e define a porta do servidor
+app.use("/users", login); //define a rota users
+
+app.listen(3001, () => console.log("Servidor rodando na porta 3001")); //inicia e define a porta do servidor
