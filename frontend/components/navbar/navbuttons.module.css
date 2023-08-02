@@ -1,0 +1,32 @@
+.main {
+  height: 100%;
+  width: 150px;
+  justify-content: center;
+  place-items: center;
+  display: flex;
+}
+
+.iconContainer {
+  height: 40px;
+  width: 40px;
+  background-color: #ecf4ff;
+  border-radius: 8px;
+  justify-content: center;
+  place-items: center;
+  display: flex;
+  transition-duration: 0.5s;
+}
+
+.iconContainer:hover {
+  background-color: #0d63f3;
+}
+
+.iconContainer:hover > .icon {
+  color: white;
+}
+
+.icon {
+  font-size: 19px;
+  transition-duration: 0.5s;
+  color: #0d63f3;
+}

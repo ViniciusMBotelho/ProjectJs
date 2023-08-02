@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Image from "next/image";
+import Navbar from "@/components/navbar/navbar";
 
 export default function Home() {
   //pagina inicial do site
@@ -33,26 +34,23 @@ export default function Home() {
       .catch((error) => console.log(error));
   };
 
-  const DivProduto = () =>
-    //criação da div onde o produto ira aparecer no corpo do site
-    //loop para aparecer todo o array ||||| div id={produto.id} oara que cada div tenha uma nomenclatura unica
-    produtos.map((produto) => (
-      <div id={produto.id}>
-        <img src={produto.imagem} width={500} height={300} />
-        <h4>{produto.nome}</h4>
-        <h5>{produto.preco}</h5>
-        <h6>{produto.categoria}</h6>
-        <button onClick={() => deleteProduto(produto.id)}>Deletar</button>
-      </div>
-    )); //componente de produto
+  // const DivProduto = () =>
+  //   //criação da div onde o produto ira aparecer no corpo do site
+  //   //loop para aparecer todo o array ||||| div id={produto.id} oara que cada div tenha uma nomenclatura unica
+  //   produtos.map((produto) => (
+  //     <div id={produto.id}>
+  //       <img src={produto.imagem} width={500} height={300} />
+  //       <h4>{produto.nome}</h4>
+  //       <h5>{produto.preco}</h5>
+  //       <h6>{produto.categoria}</h6>
+  //       <button onClick={() => deleteProduto(produto.id)}>Deletar</button>
+  //     </div>
+  //   )); //componente de produto
 
   return (
     //corpo do site
     <main className={styles.main}>
-      <h1>Loja algumacoisa</h1>
-      <DivProduto />
-      <h3>{numero}</h3>
-      <button onClick={atualiza}>Aumentar</button>
+      <Navbar/>
     </main>
   );
 }
