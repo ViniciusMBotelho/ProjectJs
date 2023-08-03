@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./searchInput.module.css";
+import styles from "../styles/searchInput.module.css";
 import { HiSearch } from "react-icons/hi";
 
 function SearchInput() {

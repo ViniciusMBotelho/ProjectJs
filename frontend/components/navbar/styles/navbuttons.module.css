@@ -14,7 +14,8 @@
   justify-content: center;
   place-items: center;
   display: flex;
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
+  cursor: pointer;
 }
 
 .iconContainer:hover {

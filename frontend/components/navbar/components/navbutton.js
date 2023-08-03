@@ -1,6 +1,6 @@
 import React from "react";
 import { FiShoppingCart, FiHeart } from "react-icons/fi";
-import styles from "./navbuttons.module.css";
+import styles from "../styles/navbuttons.module.css";
 
 export function FavButton() {
   return (
