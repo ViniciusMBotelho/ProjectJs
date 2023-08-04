@@ -1,8 +1,8 @@
 .userButton {
   background-image: linear-gradient(
     to right,
-    rgba(77, 94, 246, 0.208) 20%,
-    rgba(246, 77, 77, 0.144) 90%
+    rgba(77, 94, 246, 0.22) 20%,
+    rgba(246, 77, 77, 0.23) 90%
   );
   border: none;
   height: 100%;
@@ -14,7 +14,7 @@
 }
 
 .userButton:hover {
-  background-color: rgba(246, 77, 77, 0.3);
   color: #ecf4ff;
+  background-color: rgba(246, 77, 77, 0.666);
   scale: 105%;
 }
