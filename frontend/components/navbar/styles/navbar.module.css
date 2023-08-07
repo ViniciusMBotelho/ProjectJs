@@ -14,9 +14,10 @@
   max-width: 1200px;
   background-color: rgb(255, 255, 255);
 }
+
 .coluna {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   place-items: center;
   height: 100%;
   width: 100%;
@@ -27,11 +28,17 @@
   filter: grayscale(40%);
   transition: all 0.5s;
   border-radius: 50px;
-  box-shadow: 3px 12px 12px -2px rgb(0, 0, 0);
 }
 
 .logo:hover {
   filter: grayscale(0%);
   scale: 105%;
+}
 
+.imgContainer {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  width: auto;
+  height: auto;
 }

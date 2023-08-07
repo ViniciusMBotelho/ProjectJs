@@ -1,0 +1,7 @@
+.ProdutosContainer {
+  max-width: 1200px;
+  width: 100%;
+  min-height: 90.4vh;
+  display: flex;
+  flex-wrap: wrap;
+}

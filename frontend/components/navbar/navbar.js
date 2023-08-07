@@ -13,7 +13,14 @@ function Navbar() {
     <div className={styles.main}>
       <div className={styles.container}>
         <div className={styles.coluna}>
-          <Image className={styles.logo} src="/logo1.png" height={42} width={50} />
+          <div className={styles.imgContainer}>
+            <Image
+              className={styles.logo}
+              src="/logo1.png"
+              height={50}
+              width={50}
+            />
+          </div>
           <Categoria />
         </div>
         <div className={styles.coluna}>

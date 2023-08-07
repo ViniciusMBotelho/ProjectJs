@@ -1,6 +1,7 @@
 import { Router } from "express"; //função de roteamento (criar rotas)
-import { createProdutos, listProdutos } from "./listProdutos.js"; //importação de função de criar e listar produtos
-import { deleteProdutos } from "./listProdutos.js"; //importação de função de deletar produtos
+import { listProdutos } from "./listProdutos.js"; //importação de função de criar e listar produtos
+import { createProdutos } from "./createProdutos.js";
+import { deleteProdutos } from "./deleteProdutos.js";
 
 export const produtosRouter = Router(); //exportar função para o server.js
 
